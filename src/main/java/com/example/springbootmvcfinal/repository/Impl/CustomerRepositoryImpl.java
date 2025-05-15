@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
-    private static final Map<String , Customer> customerMap = new HashMap<>();
+    private static final Map<String, Customer> customerMap = new HashMap<>();
 
     public CustomerRepositoryImpl() {
         Customer customer1 = new Customer("test", "12345", "홍길동");

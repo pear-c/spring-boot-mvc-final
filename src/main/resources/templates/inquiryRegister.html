@@ -7,15 +7,29 @@
 <body>
 <h1>문의 하기</h1>
 
-    <form method="post" action="/cs/inquiry/register">
+    <form method="post" enctype="multipart/form-data" action="/cs/inquiry/register">
         제목: <input type="text" name="title" /><br/><br/>
         분류:
-        <th:block th:each="category : ${T(com.example.springbootmvcfinal.domain.InquiryCategory).values()}">
             <label>
-                <input type="radio" name="category" th:value="${category}" required />
-                <span th:text="${category.label}">분류명</span>
+                <input type="radio" name="category" value="COMPLAINT" required />
+                불만 접수
             </label>
-        </th:block>
+            <label>
+                <input type="radio" name="category" value="SUGGESTION" required />
+                제안
+            </label>
+            <label>
+                <input type="radio" name="category" value="REFUND" required />
+                환불/교환
+            </label>
+            <label>
+                <input type="radio" name="category" value="PRAISE" required />
+                칭찬해요
+            </label>
+            <label>
+                <input type="radio" name="category" value="ETC" required />
+                기타 문의
+            </label>
         <br /><br />
         내용: <textarea name="content" cols="40" rows="8"></textarea><br /><br />
 

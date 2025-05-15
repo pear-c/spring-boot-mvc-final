@@ -3,6 +3,7 @@ package com.example.springbootmvcfinal.domain.inquiry;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Value;
+import org.springframework.web.multipart.MultipartFile;
 
 @Value
 public class InquiryRegisterRequest {
@@ -16,5 +17,5 @@ public class InquiryRegisterRequest {
     @Size(max = 40000)
     String content;
 
-//    MultipartFile file;
+    MultipartFile file;
 }

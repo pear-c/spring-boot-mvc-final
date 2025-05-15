@@ -7,4 +7,5 @@ import java.util.List;
 public interface AttachmentRepository {
     void save(Attachment file);
     List<Attachment> findByInquiryId(Long id);
+    Long increaseAndGetAttachmentId();
 }

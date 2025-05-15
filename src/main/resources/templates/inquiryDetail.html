@@ -31,6 +31,16 @@
             </a>
         </td>
     </tr>
+    <tr>
+        <th>첨부 이미지</th>
+        <td>
+            <div th:each="file : ${attachments}">
+                <img th:src="@{${file.uploadPath + '/' + file.originalFileName}}"
+                     th:alt="${file.originalFileName}"
+                     style="max-width: 300px; max-height: 300px;" />
+            </div>
+        </td>
+    </tr>
 </table>
 
 <br/>
