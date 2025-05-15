@@ -11,15 +11,17 @@
     <thead>
     <tr>
         <th>제목</th>
-        <th>내용</th>
-        <th>작성일</th>
+        <th>분류</th>
+        <th>작성일시</th>
+        <th>답변 여부</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="inquiry : ${inquiryList}">
         <td><a th:href="@{/cs/inquiry/{id}(id=${inquiry.id})}" th:text="${inquiry.title}">제목</a></td>
-        <td th:text="${inquiry.content}">내용</td>
-        <td th:text="${#temporals.format(inquiry.createdAt, 'yyyy-MM-dd HH:mm')}">작성일</td>
+        <td th:text="${inquiry.category.getLabel()}">분류</td>
+        <td th:text="${#temporals.format(inquiry.createdAt, 'yyyy-MM-dd HH:mm')}">작성일시</td>
+        <td th:text="${inquiry.answered}">답변 여부</td>
     </tr>
     </tbody>
 </table>

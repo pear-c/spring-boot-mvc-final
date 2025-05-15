@@ -12,10 +12,12 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class Inquiry {
-    private Long id;
-    private String title;
-    private String content;
-    private LocalDateTime createdAt;
+    private Long id;                    // 문의 번호
+    private String title;               // 제목
+    private InquiryCategory category;   // 분류
+    private String content;             // 본문
+    private LocalDateTime createdAt;    // 작성일시
 
-    private String customerId;
+    private String customerId;          // 작성자
+    private boolean answered;           // 답변 여부
 }

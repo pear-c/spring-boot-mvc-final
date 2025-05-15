@@ -1,6 +1,7 @@
 package com.example.springbootmvcfinal.repository.Impl;
 
 import com.example.springbootmvcfinal.domain.Inquiry;
+import com.example.springbootmvcfinal.domain.InquiryCategory;
 import com.example.springbootmvcfinal.repository.InquiryRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,8 +17,8 @@ public class InquiryRepositoryImpl implements InquiryRepository {
     private static final Map<Long, Inquiry> inquiryMap = new HashMap<>();
 
     public InquiryRepositoryImpl() {
-        Inquiry inquiry1 = new Inquiry(1L, "테스트 제목1", "테스트 내용1", LocalDateTime.now(), "test");
-        Inquiry inquiry2 = new Inquiry(2L, "테스트 제목2", "테스트 내용2", LocalDateTime.now(), "test");
+        Inquiry inquiry1 = new Inquiry(1L, "상품 교환 원해요.", InquiryCategory.REFUND, "상품 여기 하자 있는데 교환되나요?", LocalDateTime.now(), "test", false);
+        Inquiry inquiry2 = new Inquiry(2L, "칭찬합니다.", InquiryCategory.PRAISE, "상품 아주 마음에 들어요", LocalDateTime.now(), "test", false);
         inquiryMap.put(inquiry1.getId(), inquiry1);
         inquiryMap.put(inquiry2.getId(), inquiry2);
     }
