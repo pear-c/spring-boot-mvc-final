@@ -1,6 +1,7 @@
 package com.example.springbootmvcfinal.advice;
 
 import com.example.springbootmvcfinal.exception.CustomerNotFoundException;
+import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,7 +20,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public String handleOther(Exception ex, Model model) {
         log.error("", ex);
-        model.addAttribute("exception", "알 수 없는 오류가 발생했습니다.");
+        model.addAttribute("exception", ex);
         return "error";
     }
 }

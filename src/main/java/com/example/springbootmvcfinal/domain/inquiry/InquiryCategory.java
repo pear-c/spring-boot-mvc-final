@@ -1,4 +1,4 @@
-package com.example.springbootmvcfinal.domain;
+package com.example.springbootmvcfinal.domain.inquiry;
 
 public enum InquiryCategory {
     COMPLAINT("불만 접수"),

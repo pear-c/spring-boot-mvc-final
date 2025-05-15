@@ -1,6 +1,6 @@
 package com.example.springbootmvcfinal.controller;
 
-import com.example.springbootmvcfinal.domain.Inquiry;
+import com.example.springbootmvcfinal.domain.inquiry.Inquiry;
 import com.example.springbootmvcfinal.repository.InquiryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문의 등록</title>
+</head>
+<body>
+<h1>문의 하기</h1>
+
+    <form method="post" action="/cs/inquiry/register">
+        제목: <input type="text" name="title" /><br/><br/>
+        분류:
+        <th:block th:each="category : ${T(com.example.springbootmvcfinal.domain.InquiryCategory).values()}">
+            <label>
+                <input type="radio" name="category" th:value="${category}" required />
+                <span th:text="${category.label}">분류명</span>
+            </label>
+        </th:block>
+        <br /><br />
+        내용: <textarea name="content" cols="40" rows="8"></textarea><br /><br />
+
+        파일첨부: <input type="file" name="file" /><br /><br />
+
+        <input type="submit" value="확인" />
+        <input type="button" value="취소" onclick="location.href='/cs'" />
+    </form>
+
+    <br/>
+</body>
+</html>

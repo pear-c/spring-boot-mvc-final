@@ -1,4 +1,4 @@
-package com.example.springbootmvcfinal.domain;
+package com.example.springbootmvcfinal.domain.customer;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

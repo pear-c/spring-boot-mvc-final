@@ -1,17 +1,12 @@
 package com.example.springbootmvcfinal.controller;
 
-import com.example.springbootmvcfinal.domain.Customer;
-import com.example.springbootmvcfinal.domain.Inquiry;
+import com.example.springbootmvcfinal.domain.customer.Customer;
 import com.example.springbootmvcfinal.exception.CustomerNotFoundException;
 import com.example.springbootmvcfinal.repository.CustomerRepository;
-import com.example.springbootmvcfinal.repository.InquiryRepository;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
