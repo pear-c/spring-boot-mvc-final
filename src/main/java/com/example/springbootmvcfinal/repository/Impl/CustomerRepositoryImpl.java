@@ -14,8 +14,11 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     private static final Map<String , Customer> customerMap = new HashMap<>();
 
     public CustomerRepositoryImpl() {
-        Customer customer = new Customer("test", "12345", "홍길동");
-        customerMap.put(customer.getId(), customer);
+        Customer customer1 = new Customer("test", "12345", "홍길동");
+        Customer customer2 = new Customer("tt", "12345", "김철수");
+
+        customerMap.put(customer1.getId(), customer1);
+        customerMap.put(customer2.getId(), customer2);
     }
 
     @Override

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface InquiryRepository {
     List<Inquiry> findByCustomerId(String customerId);
+    Inquiry findById(Long id);
 }

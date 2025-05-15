@@ -19,16 +19,19 @@ import java.util.List;
 public class CustomerLoginController {
 
     private final CustomerRepository customerRepository;
-    private final InquiryRepository inquiryRepository;
 
     @GetMapping
-    public String login() {
+    public String login(HttpSession session) {
+        if(session.getAttribute("loginCustomer") != null) {
+            return "redirect:/cs";
+        }
+
         return "loginForm";
     }
 
     @PostMapping
     public String doLogin(@RequestParam String id, @RequestParam String password,
-                          HttpSession session, Model model) {
+                          HttpSession session) {
         if(!customerRepository.matches(id, password)) {
             throw new CustomerNotFoundException();
         }
@@ -36,9 +39,6 @@ public class CustomerLoginController {
         Customer customer = customerRepository.findById(id);
         session.setAttribute("loginCustomer", customer);
 
-        List<Inquiry> inquiryList = inquiryRepository.findByCustomerId(id);
-        model.addAttribute("inquiryList", inquiryList);
-
-        return "customerPage";
+        return "redirect:/cs";
     }
 }
