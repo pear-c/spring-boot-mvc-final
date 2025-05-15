@@ -14,11 +14,6 @@ public class AttachmentRepositoryImpl implements AttachmentRepository {
 
     private static final Map<Long, Attachment> attachmentMap = new HashMap<>();
 
-    public AttachmentRepositoryImpl() {
-        Attachment file = new Attachment(1L, 1L, "apple.jpeg", "apple.jpeg", "image/jpeg", 1024L, "/images");
-        attachmentMap.put(file.getId(), file);
-    }
-
     @Override
     public void save(Attachment file) {
         attachmentMap.put(file.getId(), file);

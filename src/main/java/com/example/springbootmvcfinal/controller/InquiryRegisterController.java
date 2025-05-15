@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -57,22 +58,26 @@ public class InquiryRegisterController {
         );
         inquiryRepository.save(newInquiry);
 
-        MultipartFile file = inquiryRegisterRequest.getFile();
-        if(file != null && !file.isEmpty()) {
-            String originalFileName = file.getOriginalFilename();
-            String savedFileName = UPLOAD_DIR + originalFileName;
-            file.transferTo(Paths.get(savedFileName));
+        List<MultipartFile> files = inquiryRegisterRequest.getFiles();
+        if(files != null) {
+            for(MultipartFile file : files) {
+                if(!file.isEmpty()) {
+                    String originalFileName = file.getOriginalFilename();
+                    String savedFileName = UPLOAD_DIR + originalFileName;
+                    file.transferTo(Paths.get(savedFileName));
 
-            Attachment attachment = new Attachment(
-                    attachmentRepository.increaseAndGetAttachmentId(),
-                    newInquiry.getId(),
-                    originalFileName,
-                    savedFileName,
-                    file.getContentType(),
-                    file.getSize(),
-                    "/images"
-            );
-            attachmentRepository.save(attachment);
+                    Attachment attachment = new Attachment(
+                            attachmentRepository.increaseAndGetAttachmentId(),
+                            newInquiry.getId(),
+                            originalFileName,
+                            savedFileName,
+                            file.getContentType(),
+                            file.getSize(),
+                            "/images"
+                    );
+                    attachmentRepository.save(attachment);
+                }
+            }
         }
 
         return "redirect:/cs";

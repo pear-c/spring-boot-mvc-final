@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Value;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Value
 public class InquiryRegisterRequest {
     @NotEmpty
@@ -17,5 +19,5 @@ public class InquiryRegisterRequest {
     @Size(max = 40000)
     String content;
 
-    MultipartFile file;
+    List<MultipartFile> files;
 }
