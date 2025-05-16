@@ -26,11 +26,8 @@
         <td th:text="${#temporals.format(inquiry.createdAt, 'yyyy-MM-dd HH:mm')}">작성일</td>
         <td th:text="${inquiry.category.getLabel()}">분류</td>
         <td>
-            <a th:href="@{/cs/inquiry/{id}(id=${inquiry.id})}">상세</a>
+            <a th:href="@{/cs/admin/answer(id=${inquiry.id})}">답변하기</a>
         </td>
-    </tr>
-    <tr th:if="${#lists.isEmpty(unansweredList)}">
-        <td colspan="6">모든 문의에 답변이 완료되었습니다.</td>
     </tr>
     </tbody>
 </table>
