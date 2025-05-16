@@ -6,6 +6,19 @@
 </head>
 <body>
 <h1>내 문의 목록</h1>
+<form method="get" action="/cs">
+    <label for="category">분류 선택:</label>
+    <select name="category" id="category">
+        <option value="">전체</option>
+        <option value="COMPLAINT" th:selected="${param.category == 'COMPLAINT'}">불만 접수</option>
+        <option value="SUGGESTION" th:selected="${param.category == 'SUGGESTION'}">제안</option>
+        <option value="REFUND" th:selected="${param.category == 'REFUND'}">환불/교환</option>
+        <option value="PRAISE" th:selected="${param.category == 'PRAISE'}">칭찬해요</option>
+        <option value="ETC" th:selected="${param.category == 'ETC'}">기타 문의</option>
+    </select>
+    <button type="submit">검색</button>
+</form>
+<br />
 
 <table>
     <thead>
