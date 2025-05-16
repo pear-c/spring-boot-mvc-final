@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface InquiryRepository {
     List<Inquiry> findByCustomerId(String customerId);
+    List<Inquiry> findAll();
     Inquiry findById(Long id);
     void save(Inquiry inquiry);
     Long increaseAndGetInquiryId();

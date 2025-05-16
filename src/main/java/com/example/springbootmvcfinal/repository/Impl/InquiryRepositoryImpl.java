@@ -37,6 +37,11 @@ public class InquiryRepositoryImpl implements InquiryRepository {
     }
 
     @Override
+    public List<Inquiry> findAll() {
+        return new ArrayList<>(inquiryMap.values());
+    }
+
+    @Override
     public Inquiry findById(Long id) {
         return inquiryMap.get(id);
     }

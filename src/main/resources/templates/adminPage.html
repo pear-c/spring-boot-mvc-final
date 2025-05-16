@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>미답변 문의 목록</title>
+</head>
+<body>
+<h1>미답변 문의 목록</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>문의 번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>분류</th>
+        <th>보기</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="inquiry : ${unansweredList}">
+        <td th:text="${inquiry.id}">1</td>
+        <td th:text="${inquiry.title}">제목</td>
+        <td th:text="${inquiry.customerId}">작성자</td>
+        <td th:text="${#temporals.format(inquiry.createdAt, 'yyyy-MM-dd HH:mm')}">작성일</td>
+        <td th:text="${inquiry.category.getLabel()}">분류</td>
+        <td>
+            <a th:href="@{/cs/inquiry/{id}(id=${inquiry.id})}">상세</a>
+        </td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(unansweredList)}">
+        <td colspan="6">모든 문의에 답변이 완료되었습니다.</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<a href="/logout">로그아웃</a>
+</body>
+</html>
