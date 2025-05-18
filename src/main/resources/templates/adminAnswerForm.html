@@ -45,15 +45,14 @@
 <br/>
 
 <form method="post" th:action="@{/cs/admin/answer}">
-    <input type="hidden" name="inquiryId" th:value="${inquiry.id}" />
+    <input type="hidden" name="id" th:value="${inquiry.id}" />
 
-    <label for="answer">답변 내용</label><br/>
-    <textarea id="answer" name="answer" rows="6" cols="60" required></textarea><br/><br/>
+    <label for="content">답변 내용</label><br/>
+    <textarea id="content" name="content" rows="6" cols="60"></textarea><br/><br/>
 
     <input type="submit" value="답변 등록" />
+    <input type="button" value="취소" onclick="location.href='/cs/admin'" />
 </form>
-
 <br/>
-<a href="/cs/admin">← 미답변 목록으로 돌아가기</a>
 </body>
 </html>

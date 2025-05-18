@@ -15,7 +15,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     public CustomerRepositoryImpl() {
         Customer customer1 = new Customer("test", "12345", "홍길동");
-        Customer customer2 = new Customer("tt", "12345", "김철수");
+        Customer customer2 = new Customer("test2", "12345", "김철수");
 
         customerMap.put(customer1.getId(), customer1);
         customerMap.put(customer2.getId(), customer2);

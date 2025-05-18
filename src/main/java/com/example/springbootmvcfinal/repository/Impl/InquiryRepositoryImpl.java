@@ -4,7 +4,6 @@ import com.example.springbootmvcfinal.domain.inquiry.Inquiry;
 import com.example.springbootmvcfinal.domain.inquiry.InquiryCategory;
 import com.example.springbootmvcfinal.repository.InquiryRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

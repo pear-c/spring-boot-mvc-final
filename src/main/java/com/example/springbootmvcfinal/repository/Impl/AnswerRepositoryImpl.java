@@ -40,4 +40,9 @@ public class AnswerRepositoryImpl implements AnswerRepository {
         }
         return null;
     }
+
+    @Override
+    public Long increaseAndGetAnswerId() {
+        return answerMap.size() + 1L;
+    }
 }
