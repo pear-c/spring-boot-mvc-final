@@ -28,6 +28,18 @@
         <th>작성일</th>
         <td th:text="${#temporals.format(inquiry.createdAt, 'yyyy-MM-dd HH:mm')}">작성일</td>
     </tr>
+    <tr>
+        <th>첨부 이미지</th>
+        <td>
+            <div th:each="file : ${attachments}">
+                <a th:href="@{${file.uploadPath + '/' + file.originalFileName}}" target="_blank">
+                    <img th:src="@{${file.uploadPath + '/' + file.originalFileName}}"
+                         th:alt="${file.originalFileName}"
+                         style="max-width: 300px; max-height: 300px;" />
+                </a>
+            </div>
+        </td>
+    </tr>
 </table>
 
 <br/>
