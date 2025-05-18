@@ -15,11 +15,6 @@ public class AnswerRepositoryImpl implements AnswerRepository {
 
     private static final Map<Long, Answer> answerMap = new HashMap<>();
 
-    public AnswerRepositoryImpl() {
-        Answer answer = new Answer(1L, 2L, "답변 드립니다~", "admin", LocalDateTime.now());
-        answerMap.put(answer.getId(), answer);
-    }
-
     @Override
     public void save(Answer answer) {
         answerMap.put(answer.getId(), answer);

@@ -12,13 +12,13 @@ public class CsManagerRepositoryImpl implements CsManagerRepository {
 
     private static final Map<String, CsManager> managerMap = new HashMap<>();
 
-    public CsManagerRepositoryImpl() {
-        CsManager manager = new CsManager("admin", "12345", "CS담당자", "고객관리팀");
-        managerMap.put(manager.getId(), manager);
-    }
-
     @Override
     public CsManager findById(String id) {
         return managerMap.get(id);
+    }
+
+    @Override
+    public void save(CsManager csManager) {
+        managerMap.put(csManager.getId(), csManager);
     }
 }
