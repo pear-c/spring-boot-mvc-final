@@ -29,7 +29,6 @@ public class CsManagerAnswerController {
     private final InquiryRepository inquiryRepository;
     private final AttachmentRepository attachmentRepository;
     private final AnswerRepository answerRepository;
-    private final CsManagerRepository csManagerRepository;
 
     @GetMapping
     public String viewAnswerForm(@RequestParam("id") Long inquiryId, Model model) {
